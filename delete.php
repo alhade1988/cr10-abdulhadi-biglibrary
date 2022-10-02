@@ -25,7 +25,7 @@
 
 <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">create</a>
+    <a class="navbar-brand" href="index.php">Home</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -52,21 +52,55 @@
   </div>
 </nav>
 
-<style type= "text/css">
-           fieldset {
-               margin: auto;
-               margin-top: 100px;
-               width: 70% ;
-           }    
-           .img{
-               width: 70px !important;
-                height: 70px !important;
-           }    
+<<style >
+
+body {
+  margin: 0;
+  background: #000; 
+}
+video { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+ 
+  background-size: cover;
+  transition: 1s opacity;
+}
+
+@media screen and (max-width: 500px) { 
+  div{width:70%;} 
+}
+@media screen and (max-device-width: 800px) {
+  
+  #bgvid { display: none; }
+}
+
+img{
+  
+  height: 150px
+
+}
+
+
+           
+           
+           
        </style>
 
-<fieldset>
+<video  id="bgvid" playsinline autoplay muted loop>
+ 
+<source src="https://static.videezy.com/system/resources/previews/000/005/713/original/book_pages_04.mp4" type="video/webm">
 
-<h1 class="text-center">Are you sure you want to delete this Book (<?= $data["titel"] ?>) <img style="border-radius: 50%; width: 150px" src="img/<?= $data["img"] ?>"></h1>
+
+</video>
+
+<h1 class="text-center text-warning m-5">Are you sure you want to delete this Book (<?= $data["titel"] ?>) <img style="border-radius: 50%; width: 150px" src="img/<?= $data["img"] ?>"></h1>
    
 
     <div class="text-center">
@@ -75,7 +109,7 @@
             <input type="hidden" name="id" value="<?= $id ?>">
             <input type="submit" class="btn btn-success" value="Yes">
         </form>
-    </div></fieldset>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>

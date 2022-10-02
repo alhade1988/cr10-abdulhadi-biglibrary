@@ -10,7 +10,7 @@
 
         $body= "
         <div class='mt-5 '>
-        <div class='card mt-5' style='width: 50rem;'>
+        <div class='card mt-5 text-warning bg-dark' style='width: 50rem;'>
             <img src='img/{$row["img"]}' class='card-img-top' alt='{$row["titel"]}'>
             <div class='card-body'>
               <h5 class='card-title'>{$row["titel"]}</h5>
@@ -76,6 +76,53 @@
   </div>
 </nav>
 
+<style >
+
+body {
+  margin: 0;
+  background: #000; 
+}
+video { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+ 
+  background-size: cover;
+  transition: 1s opacity;
+}
+
+@media screen and (max-width: 500px) { 
+  div{width:70%;} 
+}
+@media screen and (max-device-width: 800px) {
+  
+  #bgvid { display: none; }
+}
+
+img{
+  
+  height: 150px
+
+}
+
+
+           
+           
+           
+       </style>
+
+<video  id="bgvid" playsinline autoplay muted loop>
+ 
+<source src="https://static.videezy.com/system/resources/previews/000/005/713/original/book_pages_04.mp4" type="video/webm">
+
+
+</video>
 
 
 <div class="container">

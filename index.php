@@ -12,7 +12,7 @@ if(mysqli_num_rows($result) == 0){
     while($row = mysqli_fetch_assoc($result)){
         $body.= "
         <div class='container  ' >
-        <div class='card m-1 mt-5' style='width: 18rem;'>
+        <div class='card m-1 mt-5 text-warning bg-dark' style='width: 18rem;'>
             <img src='img/{$row["img"]}' class='card-img-top' alt='{$row["titel"]}'>
             <div class='card-body'>
               <h5 class='card-title'>{$row["titel"]}</h5>
@@ -96,7 +96,7 @@ video {
     height: auto;
     z-index: -100;
     transform: translateX(-50%) translateY(-50%);
- background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+ 
   background-size: cover;
   transition: 1s opacity;
 }
@@ -105,7 +105,7 @@ video {
   div{width:70%;} 
 }
 @media screen and (max-device-width: 800px) {
-  html { background: url(https://thenewcode.com/assets/images/polina.jpg) #000 no-repeat center center fixed; }
+  
   #bgvid { display: none; }
 }
 
@@ -115,25 +115,16 @@ img{
 
 }
 
-/* body {
-background-image: url("https://cdn.pixabay.com/photo/2018/04/15/08/25/roses-3321098__340.jpg");
-Background: "repeat No repeat;"
-}
-          
-               
-               
-           }     */
+
            
            
            
        </style>
 
-<video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" playsinline autoplay muted loop>
-  <!-- 
-- Video needs to be muted, since Chrome 66+ will not autoplay video with sound.
-WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
-<source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm">
-<source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4">
+<video  id="bgvid" playsinline autoplay muted loop>
+ 
+<source src="https://static.videezy.com/system/resources/previews/000/005/713/original/book_pages_04.mp4" type="video/webm">
+
 
 </video>
 

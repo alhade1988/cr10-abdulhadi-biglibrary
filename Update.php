@@ -52,10 +52,56 @@
     </div>
   </div>
 </nav>
+<style >
+
+body {
+  margin: 0;
+  background: #000; 
+}
+video { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+ 
+  background-size: cover;
+  transition: 1s opacity;
+}
+
+@media screen and (max-width: 500px) { 
+  div{width:70%;} 
+}
+@media screen and (max-device-width: 800px) {
+  
+  #bgvid { display: none; }
+}
+
+img{
+  
+  height: 150px
+
+}
 
 
+           
+           
+           
+       </style>
 
-<div class="container">
+<video  id="bgvid" playsinline autoplay muted loop>
+ 
+<source src="https://static.videezy.com/system/resources/previews/000/005/713/original/book_pages_04.mp4" type="video/webm">
+
+
+</video>
+
+
+<div class="container text-warning" >
         <h1>Add Product</h1>
   <form action="actions/a_Update.php" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
