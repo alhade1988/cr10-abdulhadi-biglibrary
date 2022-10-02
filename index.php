@@ -21,15 +21,16 @@ if(mysqli_num_rows($result) == 0){
               <p class='card-text'>lname_Author: {$row["lname_Author"]} </p>
               
               <a href='show-media.php?id={$row["id"]}' class='btn btn-outline-success'>show media</a>
-              
+              <a href='Publishers.php?id={$row["name_Publisher"]}' class='btn btn-outline-secondary'>show Publisher</a>
               <br> 
               <a href='delete.php?id={$row["id"]}' class='btn btn-danger center'>Delete</a>
               <a href='Update.php?id={$row["id"]}' class='btn btn-primary'>Update</a> 
-              <a href='Publishers.php?id={$row["name_Publisher"]}' class='btn btn-Success'>show Publisher</a> 
+               
                
             </div>
           </div>
           </div>
+          
           
           ";
     } 

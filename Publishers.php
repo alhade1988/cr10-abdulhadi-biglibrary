@@ -1,21 +1,35 @@
 <?php
     require_once "actions/db_connect.php";
 
-  
+        $id = $_GET["id"];
     
-        $sql = "SELECT `name_Publisher` FROM `media`  "; 
+        $sql = "SELECT * FROM `media` WHERE name_Publisher = '$id' "; 
         $result = mysqli_query($conn, $sql);
 
-        $row = mysqli_fetch_assoc ($result) ;
-
+        // $row = mysqli_fetch_assoc($result) ;
+        $body = "";
         while($row = mysqli_fetch_assoc($result)){
             $body.= "
         
         
             <div class='container '>
             <div class='card-body'>
-             
-              <p class='card-text'>{$row["name_Publisher"]} </p> 
+            <img src='img/{$row["img"]}' class='card-img-top' alt='{$row["titel"]}'>
+            <div class='card-body'>
+              <h5 class='card-title'>{$row["titel"]}</h5>
+              <p class='card-text'>{$row["ISBN_code"]} </p>
+              <p class='card-text'>{$row["status"]} </p>
+              <p class='card-text'>{$row["short_description"]} </p>
+              <p class='card-text'>{$row["type"]} </p>
+              <p class='card-text'>{$row["fname_Author"]} </p>
+              <p class='card-text'>{$row["lname_Author"]} </p>
+              <p class='card-text'>{$row["publish_date"]} </p>
+              <p class='card-text'>{$row["name_Publisher"]} </p>
+              <p class='card-text'>{$row["address_Publisher"]} </p>
+              <p class='card-text'>{$row["size_Publisher"]} </p>
+              <a href='show-media.php?id={$row["id"]}' class='btn btn-Success'>show media</a> 
+              <a href='Update.php?id={$row["id"]}' class='btn btn-primary'>Update</a>
+              <a href='delete.php?id={$row["id"]}' class='btn btn-danger'>Delete</a>
               
               </div>
               </div>
@@ -66,63 +80,20 @@
 <br><br>
 
 <style >
-
-body {
-  margin: 0;
-  background: #000; 
-}
-video { 
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    transform: translateX(-50%) translateY(-50%);
- background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
-  background-size: cover;
-  transition: 1s opacity;
-}
-
-@media screen and (max-width: 500px) { 
-  div{width:70%;} 
-}
-@media screen and (max-device-width: 800px) {
-  html { background: url(https://thenewcode.com/assets/images/polina.jpg) #000 no-repeat center center fixed; }
-  #bgvid { display: none; }
-}
-
 img{
   
   height: 150px
 
 }
 
-/* body {
-background-image: url("https://cdn.pixabay.com/photo/2018/04/15/08/25/roses-3321098__340.jpg");
+body {
+background-image: url("https://cdn.pixabay.com/photo/2018/04/15/08/25/roses-3321098__340.jpg") no-repeat;
 Background: "repeat No repeat;"
 }
-           .aa{
-            border-radius: 4px; 
-                margin: auto;
-               margin-top: 100px;
-               width: 70% ; 
-               
-               
-           }     */
            
        </style>
 
-<video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" playsinline autoplay muted loop>
-  <!-- 
-- Video needs to be muted, since Chrome 66+ will not autoplay video with sound.
-WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
-<source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm">
-<source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4">
 
-</video>
 
 
 
@@ -133,10 +104,7 @@ WCAG general accessibility recommendation is that media such as background video
     </div> 
 
 
-<script>
 
-   
-</script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
