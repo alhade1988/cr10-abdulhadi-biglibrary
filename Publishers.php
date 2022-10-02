@@ -12,8 +12,8 @@
             $body.= "
         
         
-            <div class='container '>
-            <div class='card-body'>
+            <div class='mt-3  p-5'>
+            <div class='card-body  '>
             <img src='img/{$row["img"]}' class='card-img-top' alt='{$row["titel"]}'>
             <div class='card-body'>
               <h5 class='card-title'>{$row["titel"]}</h5>
@@ -27,12 +27,12 @@
               <p class='card-text'>{$row["name_Publisher"]} </p>
               <p class='card-text'>{$row["address_Publisher"]} </p>
               <p class='card-text'>{$row["size_Publisher"]} </p>
-              <a href='show-media.php?id={$row["id"]}' class='btn btn-Success'>show media</a> 
+              <a href='show-media.php?id={$row["id"]}' class='btn btn-outline-success'>show media</a> 
               <a href='Update.php?id={$row["id"]}' class='btn btn-primary'>Update</a>
               <a href='delete.php?id={$row["id"]}' class='btn btn-danger'>Delete</a>
               
               </div>
-              </div>
+              </div></div>
           ";
         }
         ?>
@@ -77,7 +77,7 @@
   </div>
 </nav>
 
-<br><br>
+
 
 <style >
 img{
@@ -86,10 +86,7 @@ img{
 
 }
 
-body {
-background-image: url("https://cdn.pixabay.com/photo/2018/04/15/08/25/roses-3321098__340.jpg") no-repeat;
-Background: "repeat No repeat;"
-}
+
            
        </style>
 

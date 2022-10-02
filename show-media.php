@@ -9,8 +9,8 @@
         $row = mysqli_fetch_assoc ($result) ;
 
         $body= "
-        <div class='container'>
-        <div class='card' style='width: 18rem;'>
+        <div class='mt-5 '>
+        <div class='card mt-5' style='width: 50rem;'>
             <img src='img/{$row["img"]}' class='card-img-top' alt='{$row["titel"]}'>
             <div class='card-body'>
               <h5 class='card-title'>{$row["titel"]}</h5>
@@ -24,7 +24,7 @@
               <p class='card-text'>{$row["name_Publisher"]} </p>
               <p class='card-text'>{$row["address_Publisher"]} </p>
               <p class='card-text'>{$row["size_Publisher"]} </p>
-              <a href='show-media.php?id={$row["id"]}' class='btn btn-Success'>show media</a> 
+              <a href='Publishers.php?id={$row["name_Publisher"]}' class='btn btn-outline-secondary'>show Publisher</a> 
               <a href='Update.php?id={$row["id"]}' class='btn btn-primary'>Update</a>
               <a href='delete.php?id={$row["id"]}' class='btn btn-danger'>Delete</a>
             </div>
@@ -49,7 +49,7 @@
 <body>
 <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">create</a>
+    <a class="navbar-brand" href="index.php">Home</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>

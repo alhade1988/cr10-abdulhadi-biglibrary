@@ -11,8 +11,8 @@ if(mysqli_num_rows($result) == 0){
 }else {
     while($row = mysqli_fetch_assoc($result)){
         $body.= "
-        <div class='container'>
-        <div class='card' style='width: 18rem;'>
+        <div class='container  ' >
+        <div class='card m-1 mt-5' style='width: 18rem;'>
             <img src='img/{$row["img"]}' class='card-img-top' alt='{$row["titel"]}'>
             <div class='card-body'>
               <h5 class='card-title'>{$row["titel"]}</h5>
@@ -119,14 +119,12 @@ img{
 background-image: url("https://cdn.pixabay.com/photo/2018/04/15/08/25/roses-3321098__340.jpg");
 Background: "repeat No repeat;"
 }
-           .aa{
-            border-radius: 4px; 
-                margin: auto;
-               margin-top: 100px;
-               width: 70% ; 
+          
                
                
            }     */
+           
+           
            
        </style>
 
